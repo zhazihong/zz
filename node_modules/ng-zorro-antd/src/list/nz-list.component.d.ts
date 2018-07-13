@@ -1,0 +1,33 @@
+import { ChangeDetectorRef, ElementRef, OnChanges, SimpleChanges, TemplateRef } from '@angular/core';
+import { NzUpdateHostClassService } from '../core/services/update-host-class.service';
+import { ListSize, NzListGrid } from './interface';
+export declare class NzListComponent implements OnChanges {
+    private el;
+    private cd;
+    private updateHostClassService;
+    nzDataSource: any[];
+    private _bordered;
+    nzBordered: boolean;
+    nzGrid: NzListGrid;
+    _isHeader: boolean;
+    _header: string;
+    _headerTpl: TemplateRef<void>;
+    nzHeader: string | TemplateRef<void>;
+    _isFooter: boolean;
+    _footer: string;
+    _footerTpl: TemplateRef<void>;
+    nzFooter: string | TemplateRef<void>;
+    nzItemLayout: 'vertical' | 'horizontal';
+    nzRenderItem: TemplateRef<void>;
+    private _loading;
+    nzLoading: boolean;
+    nzLoadMore: TemplateRef<void>;
+    nzPagination: TemplateRef<void>;
+    nzSize: ListSize;
+    private _split;
+    nzSplit: boolean;
+    private prefixCls;
+    private _setClassMap();
+    constructor(el: ElementRef, cd: ChangeDetectorRef, updateHostClassService: NzUpdateHostClassService);
+    ngOnChanges(changes: SimpleChanges): void;
+}

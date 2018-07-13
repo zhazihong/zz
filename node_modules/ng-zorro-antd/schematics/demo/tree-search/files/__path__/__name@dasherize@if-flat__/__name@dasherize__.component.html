@@ -1,0 +1,16 @@
+
+    <nz-input-group [nzSuffix]="suffixIcon">
+      <input type="text" nz-input placeholder="Search Tree Node" [(ngModel)]="searchValue">
+    </nz-input-group>
+    <ng-template #suffixIcon>
+      <i class="anticon anticon-search"></i>
+    </ng-template>
+    <nz-tree [(ngModel)]="nodes"
+             [nzSearchValue]="searchValue"
+             [nzCheckable]="true"
+             (nzOnSearchNode)="mouseAction('search',$event)"
+             (nzCheckBoxChange)="mouseAction('check',$event)"
+             (nzClick)="mouseAction('click', $event)"
+             (nzExpandChange)="mouseAction('expand',$event)"
+             (nzDblClick)="mouseAction('dblclick',$event)">
+    </nz-tree>

@@ -1,0 +1,9 @@
+
+    :host ::ng-deep .ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+      width: calc(100% - 8px);
+    }
+
+    :host ::ng-deep .ant-tree li span[draggable], :host ::ng-deep .ant-tree li span[draggable="true"] {
+      width: calc(100% - 8px);
+    }
+  

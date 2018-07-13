@@ -1,0 +1,9 @@
+
+    <nz-tree-select
+      style="width: 250px"
+      [nzNodes]="nodes"
+      nzPlaceHolder="Please select"
+      [(ngModel)]="value"
+      [nzCheckable]="true"
+      (ngModelChange)="onChange($event)">
+    </nz-tree-select>

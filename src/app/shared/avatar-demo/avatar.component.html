@@ -1,0 +1,42 @@
+<!-- 可放大 -->
+<div *ngIf="canClick">
+    <div *ngIf="isArray && imageId && imageId.length>0" c-image-viewer (onViewInit)="onViewInit($event)">
+        <ng-template *ngTemplateOutlet="multiView"></ng-template>
+    </div>
+    <div *ngIf=" !isArray && showSrc" c-image-viewer (onViewInit)="onViewInit($event)">
+        <ng-template *ngTemplateOutlet="singleView"></ng-template>
+    </div>
+</div>
+<!-- 不能放大 -->
+<div *ngIf="!canClick">
+    <div *ngIf="isArray && imageId && imageId.length>0">
+        <ng-template *ngTemplateOutlet="multiView"></ng-template>
+    </div>
+    <div *ngIf="!isArray && showSrc">
+        <ng-template *ngTemplateOutlet="singleView"></ng-template>
+    </div>
+</div>
+
+<ng-template #multiView>
+    <div class="mr-2 mt-2 mb-4" *ngFor="let iamgeUrl of imageId"
+         [style.width.px]="width"
+         [style.height.px]="height"
+         [style.border-radius.px]="myRadius"
+         [style.cursor]="canClick?'pointer':''"
+         style="overflow: hidden; float: left;position: relative; display: flex; justify-content: center; align-items: center;">
+        <img [src]="iamgeUrl"
+             [style.width.px]="width"
+        >
+    </div>
+</ng-template>
+<ng-template #singleView>
+    <div [style.width.px]="width"
+         [style.height.px]="height"
+         [style.border-radius.px]="myRadius"
+         [style.cursor]="canClick?'pointer':''"
+         style="overflow: hidden; float: left;position: relative; display: flex; justify-content: center; align-items: center;">
+        <img [src]="showSrc"
+             [ngStyle]="classObject"
+        >
+    </div>
+</ng-template>
