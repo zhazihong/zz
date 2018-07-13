@@ -13,7 +13,7 @@ import en from '@angular/common/locales/en';
 registerLocaleData(en);
 
 /** 配置 ng-zorro-antd 国际化 **/
-import { NZ_I18N, en_US, NzI18nService } from 'ng-zorro-antd';
+import { NZ_I18N, en_US } from 'ng-zorro-antd';
 
 @NgModule({
     declarations: [
