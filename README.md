@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# Ww
+
+# zz
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
@@ -25,9 +25,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
 # zz
 angular5 自学项目
 封装一些常用组件
->>>>>>> edf6b79b95be8b071744e56c2e2d77808619e39f
