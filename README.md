@@ -26,5 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 # zz
-angular5 自学项目
-封装一些常用组件
+angular5 项目 
+1. 自己封装的一些常用组件
+2. 熟悉创建项目的流程
