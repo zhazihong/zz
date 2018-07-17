@@ -8,19 +8,24 @@ import {SharedModule} from './shared/shared.module';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 /** 配置 angular i18n **/
-import { registerLocaleData } from '@angular/common';
+import {registerLocaleData} from '@angular/common';
 import en from '@angular/common/locales/en';
+
 registerLocaleData(en);
 
 /** 配置 ng-zorro-antd 国际化 **/
-import { NZ_I18N, en_US } from 'ng-zorro-antd';
+import {NZ_I18N, en_US} from 'ng-zorro-antd';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
     declarations: [
         AppComponent
     ],
     imports: [
+        AppRoutingModule,
         BrowserModule,
+        RouterModule,
         SharedModule,
         FormsModule,
         HttpClientModule,
