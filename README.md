@@ -29,3 +29,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 angular5 项目 
 1. 自己封装的一些常用组件
 2. 熟悉创建项目的流程
+
+将 ant-design 组件库引入 放在shared.module.ts中 每次引入这个公用的模块

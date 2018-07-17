@@ -58,7 +58,7 @@ export class AvatarComponent implements OnChanges {
                             // this.imageId[index] = `${this.appConfig.getFileServer()}${value}`;
                         }
                         // 通讯录头像全都走聊天服务器
-                        if (value.indexOf('/avatar/') > 0) {
+                        if (value.indexOf('/avatar-demo/') > 0) {
                             this.imageId[index] = value;
                         }
                     }
@@ -74,7 +74,7 @@ export class AvatarComponent implements OnChanges {
                     // this.showSrc = `${this.appConfig.getFileServer()}${this.imageId}`;
                 }
                 // 通讯录头像全都走聊天服务器
-                if (this.imageId.indexOf('/avatar/') > 0) {
+                if (this.imageId.indexOf('/avatar-demo/') > 0) {
                     this.showSrc = this.imageId;
                 }
             } else {

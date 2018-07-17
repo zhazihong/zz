@@ -1,42 +1,31 @@
-<nz-layout class="nzLayout">
+<nz-layout class="home-nzLayout">
+
+    <!-- 左侧组件树 -->
     <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate">
         <div class="logo">
         </div>
         <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-            <li nz-submenu>
-                <span title><i class="anticon anticon-user"></i><span class="nav-text">User</span></span>
-                <ul>
-                    <li nz-menu-item>Tom</li>
-                    <li nz-menu-item>Bill</li>
-                    <li nz-menu-item>Alex</li>
+            <li nz-submenu *ngFor="let item of menuData" [nzOpen]="item.isOpen">
+                <span title><i [class]="item.icon"></i><span class="nav-text">{{item.name}}</span></span>
+                <ul *ngIf="item.children && item.children.length">
+                    <li nz-menu-item *ngFor="let child of item.children" [(nzSelected)]="child.selected"
+                        routerLink="{{child.link}}">{{child.name}}
+                    </li>
                 </ul>
             </li>
-            <li nz-submenu>
-                <span title><i class="anticon anticon-team"></i><span class="nav-text">Team</span></span>
-                <ul>
-                    <li nz-menu-item>Team 1</li>
-                    <li nz-menu-item>Team 2</li>
-                </ul>
-            </li>
-            <li nz-menu-item><span><i class="anticon anticon-file"></i><span class="nav-text">File</span></span></li>
         </ul>
     </nz-sider>
+
+    <!-- 右侧页面 -->
     <nz-layout>
         <nz-header style="background: #fff; padding:0;">
-            <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
+            <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed"
+               [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
         </nz-header>
-        <nz-content style="margin:0 16px;">
-            <nz-breadcrumb style="margin:16px 0;">
-                <nz-breadcrumb-item>User</nz-breadcrumb-item>
-                <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
-            </nz-breadcrumb>
-            <div style="padding:24px; background: #fff; min-height: 360px;">
-                Bill is a cat.
-            </div>
-        </nz-content>
-        <nz-footer style="text-align: center;"></nz-footer>
+        <router-outlet></router-outlet>
     </nz-layout>
 </nz-layout>
+
 <ng-template #trigger>
     <i class="anticon anticon-up"></i>
 </ng-template>
