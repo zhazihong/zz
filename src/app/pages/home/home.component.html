@@ -5,7 +5,7 @@
         <div class="logo">
         </div>
         <ul nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isCollapsed">
-            <li nz-submenu *ngFor="let item of menuData" [nzOpen]="item.isOpen">
+            <li nz-submenu *ngFor="let item of menuData" [(nzOpen)]="item.isOpen">
                 <span title><i [class]="item.icon"></i><span class="nav-text">{{item.name}}</span></span>
                 <ul *ngIf="item.children && item.children.length">
                     <li nz-menu-item *ngFor="let child of item.children" [(nzSelected)]="child.selected"

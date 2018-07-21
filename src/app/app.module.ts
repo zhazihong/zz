@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {SharedModule} from './shared/shared.module';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
@@ -17,6 +17,9 @@ registerLocaleData(en);
 import {NZ_I18N, en_US} from 'ng-zorro-antd';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
+import {AppService} from './app.service';
+import {AppConfig} from './app.config';
+import {AppInterceptor} from './core/interceptor/AppInterceptor';
 
 @NgModule({
     declarations: [
@@ -33,7 +36,12 @@ import {AppRoutingModule} from './app-routing.module';
         /** 导入 ng-zorro-antd 模块 **/
         NgZorroAntdModule
     ],
-    providers: [{provide: NZ_I18N, useValue: en_US}],
+    providers: [
+        AppService,
+        AppConfig,
+        {provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true},
+        {provide: NZ_I18N, useValue: en_US}
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,4 +1,4 @@
-import {Component, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/core';
 
 
 @Component({
@@ -8,7 +8,7 @@ import {Component, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/cor
     encapsulation: ViewEncapsulation.None, /*无 Shadow DOM，并且也无样式包装.即取消angular的样式包装机制*/
     providers: []
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnChanges {
 
     // 用户左侧树
     menuData = [{
@@ -50,6 +50,14 @@ export class HomeComponent {
     /** custom trigger can be TemplateRef **/
     changeTrigger(): void {
         this.triggerTemplate = this.customTrigger;
+    }
+
+    ngOnInit() {
+        console.log('home.component-----onInit');
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('home.component-----onChanges');
     }
 
 }
