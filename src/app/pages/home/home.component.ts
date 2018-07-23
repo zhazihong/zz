@@ -54,5 +54,18 @@ export class HomeComponent implements OnInit {
         }
     }
 
+    // 点击当前 tab 页
+    openChange(id: number) {
+        this.menuData.forEach((node) => {
+            if (id !== node.id) {
+                node.isOpen = false;
+                if (node.children) {
+                    node.children.forEach((item) => {
+                        item.selected = false;
+                    });
+                }
+            }
+        });
+    }
 
 }
