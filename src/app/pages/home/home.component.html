@@ -9,7 +9,7 @@
                 <span title><i [class]="item.icon"></i><span class="nav-text">{{item.name}}</span></span>
                 <ul *ngIf="item.children && item.children.length">
                     <li nz-menu-item *ngFor="let child of item.children" [(nzSelected)]="child.selected"
-                        routerLink="{{child.link}}">{{child.name}}
+                        routerLink="demo/{{child.link}}">{{child.name}}
                     </li>
                 </ul>
             </li>

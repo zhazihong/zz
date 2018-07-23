@@ -1,0 +1,12 @@
+{
+    "devmode": true,
+    "dev_user": {
+        "username": "",
+        "password": ""
+    },
+    "restapi": {
+        "url": "",
+        "devurl": ""
+    }
+}
+

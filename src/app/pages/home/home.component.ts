@@ -1,4 +1,5 @@
-import {Component, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import {AppConfig} from '../../app.config';
 
 
 @Component({
@@ -8,56 +9,50 @@ import {Component, OnChanges, OnInit, SimpleChanges, TemplateRef, ViewChild, Vie
     encapsulation: ViewEncapsulation.None, /*无 Shadow DOM，并且也无样式包装.即取消angular的样式包装机制*/
     providers: []
 })
-export class HomeComponent implements OnInit, OnChanges {
+export class HomeComponent implements OnInit {
 
     // 用户左侧树
-    menuData = [{
-        id: 1,
-        name: '组件示例',
-        icon: 'anticon anticon-user',
-        isOpen: false,
-        children: [
-            {
-                name: '我的demo',
-                link: 'demo/demo',
-                selected: false,
-            },
-            {
-                name: '头像组件',
-                link: 'demo/avatar-demo',
-                selected: false,
-            }
-        ]
-    }, {
-        id: 2,
-        name: '常用组件库',
-        icon: 'anticon anticon-appstore',
-        isOpen: false,
-        children: []
-    }, {
-        id: 3,
-        name: 'icon库',
-        icon: 'anticon anticon-setting',
-        isOpen: false,
-        children: []
-    }];
+    menuData;
 
     isCollapsed = false;
     triggerTemplate = null;
     @ViewChild('trigger')
     customTrigger: TemplateRef<void>;
 
-    /** custom trigger can be TemplateRef **/
-    changeTrigger(): void {
-        this.triggerTemplate = this.customTrigger;
+    constructor(private appConfig: AppConfig) {
+
     }
 
     ngOnInit() {
         console.log('home.component-----onInit');
+        // this.menuData = this.appConfig.getMenuData();
+        // 每次刷新页面后 保证左侧树节点依旧选中之前的
+        this.activeNode();
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log('home.component-----onChanges');
+    // 选中当前树节点
+    activeNode() {
+        const url = window.location.href;
+        const nodeArr = url.split('/');
+        if (url && nodeArr.length) {
+            const curNode = nodeArr[nodeArr.length - 1];
+            // 在树中找到该节点 选中并展示
+            const menuData = this.appConfig.getMenuData();
+            menuData.forEach((tab) => {
+                if (tab && tab.children) {
+                    tab.children.forEach((node) => {
+                        if (curNode === node.link) {
+                            node.selected = true;
+                            tab.isOpen = true;
+                        } else {
+                            node.selected = false;
+                        }
+                    });
+                }
+            });
+            this.menuData = menuData;
+        }
     }
+
 
 }
