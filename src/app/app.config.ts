@@ -76,6 +76,12 @@ export class AppConfig {
                 icon: 'anticon anticon-setting',
                 isOpen: false,
                 children: []
+            }, {
+                id: 4,
+                name: '动画',
+                icon: 'anticon anticon-setting',
+                isOpen: false,
+                children: []
             }];
     }
 

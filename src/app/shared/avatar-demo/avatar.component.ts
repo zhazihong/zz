@@ -13,8 +13,8 @@ export class AvatarComponent implements OnChanges {
     @Input() width: number;
     @Input() height: number = this.width;
     @Input() myRadius: number; // 图片是否有圆角
-    @Input() isShowThumbnail: boolean = false; // 显示缩略图
-    @Input() canClick: boolean = false; // 默认点击放大
+    @Input() isShowThumbnail: boolean; // 显示缩略图
+    @Input() canClick: boolean; // 默认点击放大
     @Input() defaultImg: string; // 默认头像路径
     // 默认头像男  '../../../assets/img/male-doctor.png'
     // 默认头像女  '../../../assets/img/female-doctor.png';
@@ -57,10 +57,6 @@ export class AvatarComponent implements OnChanges {
                             // this.imageId[index] = `${this.appConfig.getRestApiUrl()}${value.split('_')[1]}`;
                             // this.imageId[index] = `${this.appConfig.getFileServer()}${value}`;
                         }
-                        // 通讯录头像全都走聊天服务器
-                        if (value.indexOf('/avatar-demo/') > 0) {
-                            this.imageId[index] = value;
-                        }
                     }
                 });
             }
@@ -73,12 +69,9 @@ export class AvatarComponent implements OnChanges {
                     // this.showSrc = `${this.appConfig.getRestApiUrl()}/v1/file/${this.imageId.split('_')[1]}`;
                     // this.showSrc = `${this.appConfig.getFileServer()}${this.imageId}`;
                 }
-                // 通讯录头像全都走聊天服务器
-                if (this.imageId.indexOf('/avatar-demo/') > 0) {
-                    this.showSrc = this.imageId;
-                }
+                this.showSrc = this.imageId;
             } else {
-                this.showSrc = this.defaultImg || '../../../assets/img/LOGO.png';
+                this.showSrc = this.defaultImg || 'assets/img/default.jpg';
             }
             this.pictureMatching();
         }

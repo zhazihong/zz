@@ -7,6 +7,10 @@ import {Component} from '@angular/core';
 })
 export class AvatarDemoComponent {
 
+    imgArr = [
+        {key : 1, name: 'wz1', url: 'assets/img/wz1.jpg'},
+        {key : 2, name: 'wz2', url: 'assets/img/wz2.jpg'},
+    ];
 
     constructor() {
     }
