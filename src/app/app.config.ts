@@ -62,6 +62,11 @@ export class AppConfig {
                         name: '头像组件',
                         link: 'avatar-demo',
                         selected: false,
+                    },
+                    {
+                        name: '聊天demo',
+                        link: 'chat-demo',
+                        selected: false,
                     }
                 ]
             }, {

@@ -1,6 +1,6 @@
 /**
  * Created by JetBrains WebStorm.
- * Author: yoon
+ * Author: zzh
  * Date: 17-11-27
  * Time: 下午3:23
  * Desc:
@@ -12,6 +12,7 @@ import {SharedModule} from '../../../shared/shared.module';
 import {DemoRoutingModule} from './demo-routing.module';
 import {DemoComponent} from './my-demo/demo.component';
 import {AvatarDemoComponent} from './avatar-demo/avatar-demo.component';
+import {ChatDemoComponent} from './chat-demo/chat-demo.component';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import {AvatarDemoComponent} from './avatar-demo/avatar-demo.component';
     ],
     declarations: [
         DemoComponent,
-        AvatarDemoComponent
+        AvatarDemoComponent,
+        ChatDemoComponent,
     ],
     providers: []
 })
