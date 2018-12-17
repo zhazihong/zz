@@ -1,0 +1,93 @@
+:host {
+  flex: 1;
+}
+.multiple-wrap {
+  position: relative;
+  margin-top: 15px;
+}
+.multiple-input {
+  width: 100%;
+  min-height: 32px;
+  padding: 5px 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  float: left;
+}
+.multiple-input:focus {
+  outline: 0;
+  border-color: #40a9ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+.multiple-mask {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+.m-result {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.m-result li {
+  float: left;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+.multiple-modal {
+  position: absolute;
+  background: #fff;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  min-width: 25%;
+  max-height: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+}
+.m-wrapper {
+  margin: 0;
+  max-width: 735px;
+  max-height: 60%;
+  overflow: auto;
+  list-style: none;
+  padding: 15px;
+}
+.m-item {
+  float: left;
+  width: 140px;
+  margin-right: 5px;
+  padding: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.m-item:hover,
+.m-item:focus-within {
+  background: #ccc;
+}
+.m-item label {
+  width: 100%;
+}
+.m-title {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ccc;
+}
+.m-footer {
+  text-align: right;
+  padding: 10px 15px;
+  border-top: 1px solid #ccc;
+}
+.m-footer > button:focus {
+  background: #00bcd4;
+  color: #fff;
+  border-color: #00bcd4;
+}

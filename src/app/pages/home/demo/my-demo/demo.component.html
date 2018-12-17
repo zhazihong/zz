@@ -7,7 +7,20 @@
             <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
         </nz-breadcrumb>
         <div style="padding:24px; background: #fff; min-height: 360px;">
-            Bill is a cat.
+            <nz-select [(ngModel)]="selectedValue"
+                       name="type"
+                       style="width: 250px;"
+                       [nzPlaceHolder]="'诊断类型'"
+                       [nzFilterOption]="filterOption"
+                       [nzShowSearch]="true"
+                       [nzServerSearch]="true"
+                       [nzAllowClear]="false">
+                <nz-option
+                    *ngFor="let type of searchResult"
+                    [nzLabel]="type.name"
+                    [nzValue]="type">
+                </nz-option>
+            </nz-select>
         </div>
     </nz-content>
     <nz-footer style="text-align: center;"></nz-footer>

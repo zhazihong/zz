@@ -1,0 +1,22 @@
+<div class="multiple-wrap">
+  <div class="multiple-input" (click)="openModal()" tabindex="1">
+    <ul class="m-result">
+      <li *ngFor="let item of checkedData">{{item[mLabel]}}</li>
+    </ul>
+  </div>
+  <div class="multiple-mask" #multipleMask *ngIf="showModal">
+    <div class="multiple-modal">
+      <div class="m-title" *ngIf="mTitle">{{mTitle}}</div>
+      <ul class="m-wrapper" *ngIf="!showNoData" #mWrapper>
+        <li class="m-item" *ngFor="let item of listData">
+          <!--<label nz-checkbox [(ngModel)]="item['checked']">{{item[mLabel]}}</label>-->
+        </li>
+      </ul>
+      <li *ngIf="showNoData">暂无数据</li>
+      <div class="m-footer">
+        <button class="m-ok" nz-button nzType="primary" #okBtn (click)="ok()">保存</button>
+        <button class="m-cancel" nz-button nzType="default" #cancelBtn (click)="closeModal()">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
