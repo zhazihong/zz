@@ -67,6 +67,11 @@ export class AppConfig {
                         name: '聊天demo',
                         link: 'chat-demo',
                         selected: false,
+                    },
+                    {
+                        name: '选择器demo',
+                        link: 'select-demo',
+                        selected: false,
                     }
                 ]
             }, {

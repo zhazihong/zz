@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {DemoComponent} from './my-demo/demo.component';
 import {AvatarDemoComponent} from './avatar-demo/avatar-demo.component';
 import {ChatDemoComponent} from './chat-demo/chat-demo.component';
+import {SelectDemoComponent} from './select-demo/select-demo.component';
 
 
 const routes: Routes = [{
@@ -14,6 +15,9 @@ const routes: Routes = [{
 }, {
     path: 'chat-demo',
     component: ChatDemoComponent
+}, {
+    path: 'select-demo',
+    component: SelectDemoComponent
 }];
 
 

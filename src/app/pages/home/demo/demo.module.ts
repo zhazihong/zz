@@ -13,6 +13,7 @@ import {DemoRoutingModule} from './demo-routing.module';
 import {DemoComponent} from './my-demo/demo.component';
 import {AvatarDemoComponent} from './avatar-demo/avatar-demo.component';
 import {ChatDemoComponent} from './chat-demo/chat-demo.component';
+import {SelectDemoComponent} from './select-demo/select-demo.component';
 
 @NgModule({
     imports: [
@@ -25,6 +26,7 @@ import {ChatDemoComponent} from './chat-demo/chat-demo.component';
         DemoComponent,
         AvatarDemoComponent,
         ChatDemoComponent,
+        SelectDemoComponent,
     ],
     providers: []
 })
