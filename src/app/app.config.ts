@@ -72,6 +72,11 @@ export class AppConfig {
                         name: '选择器demo',
                         link: 'select-demo',
                         selected: false,
+                    },
+                    {
+                        name: '英雄列表',
+                        link: 'heroes-demo',
+                        selected: false,
                     }
                 ]
             }, {
