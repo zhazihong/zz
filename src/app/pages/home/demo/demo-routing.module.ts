@@ -5,7 +5,8 @@ import {AvatarDemoComponent} from './avatar-demo/avatar-demo.component';
 import {ChatDemoComponent} from './chat-demo/chat-demo.component';
 import {SelectDemoComponent} from './select-demo/select-demo.component';
 import {HeroesDemoComponent} from './heroes-demo/heroes-demo.component';
-
+import {HeroesComponent} from './heroes-demo/heroes/heroes.component';
+import {DashboardComponent} from './heroes-demo/dashboard/dashboard.component';
 
 const routes: Routes = [{
     path: 'demo',
@@ -22,6 +23,12 @@ const routes: Routes = [{
 }, {
     path: 'heroes-demo',
     component: HeroesDemoComponent
+}, {
+    path: 'heroes',
+    component: HeroesComponent
+}, {
+    path: 'dashboard',
+    component: DashboardComponent
 }];
 
 

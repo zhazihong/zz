@@ -15,6 +15,11 @@ import {AvatarDemoComponent} from './avatar-demo/avatar-demo.component';
 import {ChatDemoComponent} from './chat-demo/chat-demo.component';
 import {SelectDemoComponent} from './select-demo/select-demo.component';
 import {HeroesDemoComponent} from './heroes-demo/heroes-demo.component';
+import { HeroesComponent } from './heroes-demo/heroes/heroes.component';
+import { HeroDetailComponent } from './heroes-demo/hero-detail/hero-detail.component';
+import { MessageComponent } from './heroes-demo/message/message.component';
+import { DashboardComponent } from './heroes-demo/dashboard/dashboard.component';
+
 
 @NgModule({
     imports: [
@@ -29,6 +34,10 @@ import {HeroesDemoComponent} from './heroes-demo/heroes-demo.component';
         ChatDemoComponent,
         SelectDemoComponent,
         HeroesDemoComponent,
+        HeroesComponent,
+        HeroDetailComponent,
+        MessageComponent,
+        DashboardComponent,
     ],
     providers: []
 })
