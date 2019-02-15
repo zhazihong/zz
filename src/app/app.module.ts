@@ -20,6 +20,7 @@ registerLocaleData(en);
 
 /** 配置 ng-zorro-antd 国际化 **/
 import {NZ_I18N, en_US} from 'ng-zorro-antd';
+import {CommonService} from './core/net/common.service';
 
 @NgModule({
     declarations: [
@@ -46,7 +47,8 @@ import {NZ_I18N, en_US} from 'ng-zorro-antd';
         //     'multi': true
         // },
         // {provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true},
-        {provide: NZ_I18N, useValue: en_US}
+        {provide: NZ_I18N, useValue: en_US},
+        CommonService,
     ],
     bootstrap: [AppComponent]
 })
