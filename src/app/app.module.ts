@@ -21,6 +21,8 @@ registerLocaleData(en);
 /** 配置 ng-zorro-antd 国际化 **/
 import {NZ_I18N, en_US} from 'ng-zorro-antd';
 import {CommonService} from './core/net/common.service';
+import {StoreModule} from '@ngrx/store';
+import {counterReducer} from './pages/home/ngrx-demo/counter/counter.reducer';
 
 @NgModule({
     declarations: [
@@ -35,7 +37,9 @@ import {CommonService} from './core/net/common.service';
         HttpClientModule,
         BrowserAnimationsModule,
         /** 导入 ng-zorro-antd 模块 **/
-        NgZorroAntdModule
+        NgZorroAntdModule,
+        // NgRx 状态管理
+        StoreModule.forRoot({ count: counterReducer })
     ],
     providers: [
         AppService,

@@ -50,6 +50,7 @@ export class AppConfig {
             {
                 id: 1,
                 name: '组件示例',
+                link: 'demo',
                 icon: 'anticon anticon-user',
                 isOpen: false,
                 children: [
@@ -82,21 +83,37 @@ export class AppConfig {
             }, {
                 id: 2,
                 name: '常用组件库',
+                link: 'components',
                 icon: 'anticon anticon-appstore',
                 isOpen: false,
                 children: []
             }, {
                 id: 3,
                 name: 'icon库',
+                link: 'icons',
                 icon: 'anticon anticon-setting',
                 isOpen: false,
                 children: []
             }, {
                 id: 4,
                 name: '动画',
+                link: 'animations',
                 icon: 'anticon anticon-setting',
                 isOpen: false,
                 children: []
+            }, {
+                id: 5,
+                name: 'NgRx使用',
+                link: 'ngrx-demo',
+                icon: 'anticon anticon-setting',
+                isOpen: false,
+                children: [
+                    {
+                        name: '计数器',
+                        link: 'counter',
+                        selected: false,
+                    }
+                ]
             }];
     }
 

@@ -10,6 +10,7 @@ const routes: Routes = [
         children: [
             {path: 'demo', loadChildren: './demo/demo.module#DemoModule'},
             {path: 'main', loadChildren: './main/main.module#MainModule'},
+            {path: 'ngrx-demo', loadChildren: './ngrx-demo/ngrx-demo.module#NgrxDemoModule'},
             {path: '', redirectTo: 'main', pathMatch: 'full'}
         ]
     }
