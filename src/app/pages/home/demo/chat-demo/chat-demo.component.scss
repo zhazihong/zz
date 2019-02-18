@@ -1,0 +1,24 @@
+.bg div {
+    padding: 24px;
+    background: #fff;
+    .chat div {
+        max-width: 1000px;
+        min-width: 800px;
+        height: 100%;
+        margin: 0 auto;
+        border-radius: 3px;
+        .panel div{
+            position: relative;
+            width: 280px;
+            height: 100%;
+            float: left;
+            background: #2e3238;
+        }
+        .chat-area div{
+            position: relative;
+            background-color: #eee;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+}
