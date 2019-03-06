@@ -1,24 +1,45 @@
-.bg div {
-    padding: 24px;
-    background: #fff;
-    .chat div {
-        max-width: 1000px;
-        min-width: 800px;
-        height: 100%;
-        margin: 0 auto;
-        border-radius: 3px;
-        .panel div{
-            position: relative;
-            width: 280px;
-            height: 100%;
-            float: left;
-            background: #2e3238;
-        }
-        .chat-area div{
-            position: relative;
-            background-color: #eee;
-            height: 100%;
-            overflow: hidden;
+.chat-demo {
+    .bg {
+        padding: 24px;
+        background: url(//res.wx.qq.com/a/wx_fed/webwx/res/static/img/2zrdI1g.jpg) no-repeat 50% center;
+        background-size: cover;
+        .chat {
+            max-width: 1000px;
+            min-width: 800px;
+            margin: 0 auto;
+            border-radius: 3px;
+            height: calc(100%);
+            .panel {
+                position: relative;
+                width: 280px;
+                height: 780px;
+                float: left;
+                background: #2e3238;
+            }
+            .chat-area {
+                position: relative;
+                width: 720px;
+                height: 780px;
+                background-color: #eee;
+                overflow: hidden;
+                .chat-area-msg-list {
+                    height: 600px;
+                    overflow-y: scroll;
+                    border-bottom: 1px solid #e8e8e8 !important;
+                }
+                .chat-area-input {
+                    height: 180px;
+                    .chat-area-input-1{
+
+                    }
+                    .chat-area-input-2{
+
+                    }
+                    .chat-area-input-3{
+
+                    }
+                }
+            }
         }
     }
 }
