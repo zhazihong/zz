@@ -1,0 +1,19 @@
+<div>
+    <h4>CSS实现平行四边形布局</h4>
+
+    <span>1.skewX的局限 transform: skewX(-10deg);</span>
+    <div class="div-skew">
+        我是一段文字内容，我应用了transform属性中的skewX，看看我现在的表现是怎样子的……
+    </div>
+
+    <span>2.css shapes布局与三角</span>
+    <div>
+        <div class="shape-left"></div>
+        <div class="shape-right"></div>
+        <content class="shape-content">
+            我是一段文字内容，我应用了shapes布局，看看我现在的表现是怎样子的……
+            .shape-left元素左浮动同时设置shape-outside为倒三角，.shape-right元素右浮动同时设置shape-outside为正三角，此时，
+            content 元素里面的文字内容就自动在剩余空间环绕排版，形成平行四边形布局效果
+        </content>
+    </div>
+</div>
