@@ -114,6 +114,19 @@ export class AppConfig {
                         selected: false,
                     }
                 ]
+            }, {
+                id: 6,
+                name: 'CSS',
+                link: 'css-demo',
+                icon: 'anticon anticon-setting',
+                isOpen: false,
+                children: [
+                    {
+                        name: 'CSS实现平行四边形',
+                        link: 'parallelogram',
+                        selected: false,
+                    }
+                ]
             }];
     }
 

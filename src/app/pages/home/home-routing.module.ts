@@ -11,6 +11,7 @@ const routes: Routes = [
             {path: 'demo', loadChildren: './demo/demo.module#DemoModule'},
             {path: 'main', loadChildren: './main/main.module#MainModule'},
             {path: 'ngrx-demo', loadChildren: './ngrx-demo/ngrx-demo.module#NgrxDemoModule'},
+            {path: 'css-demo', loadChildren: './css-demo/css-demo.module#CssDemoModule'},
             {path: '', redirectTo: 'main', pathMatch: 'full'}
         ]
     }

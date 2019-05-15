@@ -1,0 +1,27 @@
+/* transform 属性 */
+.div-skew {
+    transform: skewX(-10deg);
+    border: #888888 solid 1px;
+    margin-left: 20px;
+    padding: 10px;
+    width: 200px;
+}
+
+/* shapes布局 */
+.shape-left {
+    float: left;
+    width: 200px;
+    height: 500px;
+    /* 倒三角 */
+    shape-outside: polygon(0 0, 100% 0, 0% 100%);
+}
+.shape-right {
+    float: right;
+    width: 200px;
+    height: 500px;
+    /* 正三角 */
+    shape-outside: polygon(100% 0, 100% 100%, 0 100%);
+}
+.content {
+    display: block;
+}
