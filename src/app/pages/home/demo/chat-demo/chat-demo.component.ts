@@ -7,6 +7,12 @@ import {Component} from '@angular/core';
 })
 export class ChatDemoComponent {
 
+    userList = [
+        {id: 100,
+        name: '网不扣阿斯蒂芬',
+        }
+    ];
+
 
     constructor() {
     }
